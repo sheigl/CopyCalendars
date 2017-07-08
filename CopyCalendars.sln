@@ -1,0 +1,25 @@
+
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CopyCalendars", "CopyCalendars\CopyCalendars.shproj", "{4A240E33-70DF-4AFF-A336-16EF8E92F352}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyCalendars.iOS", "iOS\CopyCalendars.iOS.csproj", "{196F3F35-F4B4-49EE-9923-929455E1319C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|iPhoneSimulator = Debug|iPhoneSimulator
+		Release|iPhone = Release|iPhone
+		Release|iPhoneSimulator = Release|iPhoneSimulator
+		Debug|iPhone = Debug|iPhone
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Release|iPhone.ActiveCfg = Release|iPhone
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Release|iPhone.Build.0 = Release|iPhone
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhone.ActiveCfg = Debug|iPhone
+		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhone.Build.0 = Debug|iPhone
+	EndGlobalSection
+EndGlobal
