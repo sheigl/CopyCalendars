@@ -5,6 +5,8 @@ Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CopyCalendars", "CopyCalend
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyCalendars.iOS", "iOS\CopyCalendars.iOS.csproj", "{196F3F35-F4B4-49EE-9923-929455E1319C}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalCopyLibrary", "CalCopyLibrary\CalCopyLibrary.csproj", "{0951E74A-9BAB-436E-B483-04316B6C5BEB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|iPhoneSimulator = Debug|iPhoneSimulator
@@ -21,5 +23,13 @@ Global
 		{196F3F35-F4B4-49EE-9923-929455E1319C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhone.ActiveCfg = Debug|iPhone
 		{196F3F35-F4B4-49EE-9923-929455E1319C}.Debug|iPhone.Build.0 = Debug|iPhone
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Debug|iPhoneSimulator.ActiveCfg = Debug|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Debug|iPhoneSimulator.Build.0 = Debug|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhone.ActiveCfg = Release|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhone.Build.0 = Release|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Debug|iPhone.ActiveCfg = Debug|Any CPU
+		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Debug|iPhone.Build.0 = Debug|Any CPU
 	EndGlobalSection
 EndGlobal
