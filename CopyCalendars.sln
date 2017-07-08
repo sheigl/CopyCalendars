@@ -2,11 +2,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.26430.14
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CalCopyLibrary", "CalCopyLibrary\CalCopyLibrary.csproj", "{0951E74A-9BAB-436E-B483-04316B6C5BEB}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CalCopyLibrary", "CalCopyLibrary\CalCopyLibrary.csproj", "{0951E74A-9BAB-436E-B483-04316B6C5BEB}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "CopyCalendars", "CopyCalendars\CopyCalendars.shproj", "{66350F3F-0768-49DD-933B-573E599681E4}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyCalendars.iOS", "iOS\CopyCalendars.iOS.csproj", "{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CopyCalendars.macOS", "CopyCalendars.macOS\CopyCalendars.macOS.csproj", "{A655A809-E5F3-4251-9298-4C124B13AD2C}"
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
@@ -28,14 +28,14 @@ Global
 		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhone.Build.0 = Release|Any CPU
 		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhoneSimulator.ActiveCfg = Release|Any CPU
 		{0951E74A-9BAB-436E-B483-04316B6C5BEB}.Release|iPhoneSimulator.Build.0 = Release|Any CPU
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Debug|iPhone.ActiveCfg = Debug|iPhone
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Debug|iPhone.Build.0 = Debug|iPhone
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Release|iPhone.ActiveCfg = Release|iPhone
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Release|iPhone.Build.0 = Release|iPhone
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
-		{B25BFBCA-0631-4FA7-8B95-BA4CF2BDB65D}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Debug|iPhone.ActiveCfg = Debug|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Debug|iPhone.Build.0 = Debug|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Debug|iPhoneSimulator.ActiveCfg = Debug|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Debug|iPhoneSimulator.Build.0 = Debug|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Release|iPhone.ActiveCfg = Release|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Release|iPhone.Build.0 = Release|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Release|iPhoneSimulator.ActiveCfg = Release|iPhoneSimulator
+		{A655A809-E5F3-4251-9298-4C124B13AD2C}.Release|iPhoneSimulator.Build.0 = Release|iPhoneSimulator
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
