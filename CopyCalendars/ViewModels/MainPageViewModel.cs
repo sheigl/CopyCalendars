@@ -33,6 +33,7 @@ namespace CopyCalendars.ViewModels
 
         public ICommand LoadItemsCommand { get; }
         public ICommand CopyCommand { get; }
+        public ICommand QuitApplicationCommand { get; }
 
 		public MainPageViewModel()
 		{			
@@ -44,6 +45,8 @@ namespace CopyCalendars.ViewModels
                 await copy.Rename();
             });
             items.Add(new CalendarItem { CommunityCode = 0, CommunityName = "No calendars available" });
+
+            QuitApplicationCommand = new Command(() => System.Diagnostics.Process.GetCurrentProcess().CloseMainWindow());
 		}
         async Task LoadItemsFromApi()
         {

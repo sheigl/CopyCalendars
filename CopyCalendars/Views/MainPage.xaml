@@ -7,6 +7,7 @@
         <StackLayout Orientation="Horizontal">
             <Button Text="Get Calendars" Command="{Binding LoadItemsCommand}" Style="{StaticResource primaryButtonStyle}" />
             <Button Text="Copy Calendars" Command="{Binding CopyCommand}" Style="{StaticResource primaryButtonStyle}" />
+            <Button Text="Quit" Command="{Binding QuitApplicationCommand}" Style="{StaticResource primaryButtonStyle}" />
             <StackLayout VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsBusy}">
                 <ActivityIndicator IsRunning="{Binding IsBusy}" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
                     <ActivityIndicator.Color>
