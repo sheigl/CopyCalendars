@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CopyCalendars.Views.MainPage" xmlns:vm="clr-namespace:CopyCalendars.ViewModels">
+    <ContentPage.BindingContext>
+        <vm:MainPageViewModel />
+    </ContentPage.BindingContext>
+    <StackLayout Padding="5">
+        <StackLayout Orientation="Horizontal">
+            <Button Text="Get Calendars" Command="{Binding LoadItemsCommand}" Style="{StaticResource primaryButtonStyle}" />
+            <Button Text="Copy Calendars" Command="{Binding CopyCommand}" Style="{StaticResource primaryButtonStyle}" />
+            <StackLayout VerticalOptions="Center" Orientation="Horizontal" HorizontalOptions="FillAndExpand" IsVisible="{Binding IsBusy}">
+                <ActivityIndicator IsRunning="{Binding IsBusy}" HorizontalOptions="EndAndExpand" VerticalOptions="Center">
+                    <ActivityIndicator.Color>
+                        <OnPlatform x:TypeArguments="Color" />
+                    </ActivityIndicator.Color>
+                </ActivityIndicator>
+                <Label Text="{Binding Message}" VerticalOptions="Center" HorizontalOptions="StartAndExpand" />
+            </StackLayout>
+        </StackLayout>
+        <ListView x:Name="ItemsListView" ItemsSource="{Binding Items}" Header="Selected Calendars" HeightRequest="300">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>        
+                        <StackLayout Padding="2" Orientation="Horizontal" VerticalOptions="Center">
+                            <Label Text="{Binding CommunityCode}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemTextStyle}" FontSize="16" VerticalOptions="Center" />
+                            <Label Text="{Binding CommunityName}" LineBreakMode="NoWrap" Style="{DynamicResource ListItemDetailTextStyle}" FontSize="16" VerticalOptions="Center" />
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+        <Label Text="Log"></Label>
+        <ScrollView HeightRequest="400">
+            <Label Text="{Binding Log}"></Label>
+        </ScrollView>
+    </StackLayout>
+</ContentPage>

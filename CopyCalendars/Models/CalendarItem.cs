@@ -1,10 +1,10 @@
 ﻿using System;
 
-namespace CalCopyLibrary
+namespace CopyCalendars.Models
 {
-	public class CalendarEntryViewModel
-	{
-		public int EntryID { get; set; }
+    public class CalendarItem
+    {
+        public int EntryID { get; set; }
 		public int CommunityID { get; set; }
 		public int CommunityCode { get; set; }
 		public string CommunityName { get; set; }
@@ -18,6 +18,5 @@ namespace CalCopyLibrary
 		public Nullable<System.DateTime> CompletedDate { get; set; }
 		public int UserID { get; set; }
 		public int InvoiceID { get; set; }
-	}
+    }
 }
-

@@ -1,9 +1,13 @@
 ﻿using System;
+using System.ComponentModel;
+using System.Threading.Tasks;
+using CopyCalendars.Services;
 
-namespace CalCopyLibrary
+namespace CopyCalendars.Models
 {
-	public class Settings
-	{		
+    public class Settings
+    {
+        public int Id { get; set; }
 		public string MasterTemplateFile { get; set; }
 		public string ProofingFolder { get; set; }
 		public string WorkingCalendarFolder { get; set; }
@@ -13,5 +17,8 @@ namespace CalCopyLibrary
 		public string ProoferInitials { get; set; }
 		public DateTime? CreatedDate { get; set; }
 		public DateTime? LastModifiedDate { get; set; }
-	}
+
+        public static Settings Current = new Settings();
+        public static void SetCurrent(Settings settings) => Current = settings;
+    }
 }
