@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml" x:Class="CopyCalendars.Views.SettingsPage" xmlns:vm="clr-namespace:CopyCalendars.ViewModels">
+	<ContentPage.BindingContext>
+        <vm:SettingsPageViewModel />
+    </ContentPage.BindingContext>
+    <Grid Padding="20,40,20,20" ColumnSpacing="10" RowSpacing="20">
+        <!--<Grid.RowDefinitions>
+            <RowDefinition Height="50" />
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>-->
+
+        <StackLayout Orientation="Vertical">
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="Proofer Initials"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding ProoferInitials}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="API Url"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding APIUrl}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="API Key"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding APIKey}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="API Secret"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding SecretKey}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="Master Template File"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding MasterTemplateFile}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+                <Button Text="Select" Style="{StaticResource primaryButtonStyle}" Clicked="MasterTemplate_Clicked"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="Proofing Folder"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding ProofingFolder}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+                <Button Text="Select" Style="{StaticResource primaryButtonStyle}" Clicked="Proof_Clicked"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Label Text="Working Calendar Folder"
+                  TextColor="#f35e20" VerticalOptions="CenterAndExpand" />                            
+                <Entry WidthRequest="250"  Text="{Binding WorkingCalendarFolder}" HorizontalOptions="FillAndExpand" VerticalOptions="CenterAndExpand"></Entry>
+                <Button Text="Select" Style="{StaticResource primaryButtonStyle}" Clicked="Working_Clicked"></Button>
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" Padding="5">
+                <Button Text="Save" Style="{StaticResource primaryButtonStyle}" Clicked="Save_Clicked"></Button>
+            </StackLayout>
+        </StackLayout>
+
+        <!--<Button Grid.Row="1" Grid.Column="0" Text="Not Now" Command="{Binding NotNowCommand}" x:Name="ButtonNowNow" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsNotBusy}" />
+        <Button Grid.Row="1" Grid.Column="1" Text="Sign In" Command="{Binding SignInCommand}" HorizontalOptions="FillAndExpand" IsEnabled="{Binding IsNotBusy}" TextColor="White" />-->
+    </Grid>
+</ContentPage>

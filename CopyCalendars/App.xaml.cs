@@ -1,4 +1,5 @@
 ﻿using Xamarin.Forms;
+using CopyCalendars.Views;
 
 namespace CopyCalendars
 {
@@ -8,7 +9,7 @@ namespace CopyCalendars
         {
             InitializeComponent();
 
-            MainPage = new CopyCalendarsPage();
+            GoToMainPage();
         }
 
         protected override void OnStart()
@@ -24,6 +25,15 @@ namespace CopyCalendars
         protected override void OnResume()
         {
             // Handle when your app resumes
+        }
+
+        public static void GoToMainPage()
+        {
+            TabbedPage returnValue = new TabbedPage();
+            returnValue.Children.Add(new NavigationPage(new MainPage()) { Title = "Copy Calendars" });
+            returnValue.Children.Add(new NavigationPage(new SettingsPage()) { Title = "Settings" });
+
+            Current.MainPage = returnValue;
         }
     }
 }
