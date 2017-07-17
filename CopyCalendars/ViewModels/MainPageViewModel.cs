@@ -42,7 +42,6 @@ namespace CopyCalendars.ViewModels
                 var copy = new CopyCalendarService(items, msg => Log = Log + $"\n\n[{DateTime.Now.ToString()}] {msg}");
 
                 await copy.CopyCalendars();
-                await copy.Rename();
             });
             items.Add(new CalendarItem { CommunityCode = 0, CommunityName = "No calendars available" });
 
