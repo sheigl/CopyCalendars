@@ -40,12 +40,12 @@
     <Compile Include="$(MSBuildThisFileDirectory)Services\SettingsRepository.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Settings.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\ApiService.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)Data\LocalDbContext.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\FileBrowser.xaml.cs">
       <DependentUpon>FileBrowser.xaml</DependentUpon>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)ViewModels\FileBrowserViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Services\CopyCalendarService.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Data\JsonDB.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="$(MSBuildThisFileDirectory)Views\" />

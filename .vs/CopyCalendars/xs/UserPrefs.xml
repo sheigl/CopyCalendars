@@ -1,0 +1,19 @@
+﻿<Properties StartupConfiguration="{A655A809-E5F3-4251-9298-4C124B13AD2C}|Default">
+  <MonoDevelop.Ide.Workbench>
+    <Files>
+      <File FileName="CopyCalendars/ViewModels/SettingsPageViewModel.cs" Line="87" Column="24" />
+      <File FileName="CopyCalendars/Services/SettingsRepository.cs" Line="33" Column="43" />
+      <File FileName="CopyCalendars/Data/JsonDB.cs" Line="35" Column="14" />
+      <File FileName="CopyCalendars/Models/Settings.cs" Line="10" Column="9" />
+      <File FileName="CopyCalendars/Services/CopyCalendarService.cs" Line="125" Column="74" />
+      <File FileName="CopyCalendars/Services/ApiService.cs" Line="23" Column="56" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug|iPhone" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore />
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.CopyCalendars.macOS PreferredExecutionTarget="Test1" />
+  <MultiItemStartupConfigurations />
+</Properties>

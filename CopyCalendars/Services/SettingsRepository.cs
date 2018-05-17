@@ -1,54 +1,36 @@
 ﻿using System;
 using System.Threading.Tasks;
-using CopyCalendars.Data;
 using CopyCalendars.Models;
-using Microsoft.EntityFrameworkCore;
 using System.IO;
+using CopyCalendars.Data;
 
 namespace CopyCalendars.Services
 {
     public class SettingsRepository
     {
+        private JsonDB<Settings> _db;
         public SettingsRepository()
         {
-            using(var db = new LocalDbContext())
-            {
-				string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.Personal), "CopyCalendars");
-
-				if (!Directory.Exists(path))
-				{
-					Directory.CreateDirectory(path);
-				}
-
-                db.Database.EnsureCreated();
-            }
+            _db = new JsonDB<Settings>();
         }
 
-        public async Task<Settings> Get()
+        public Settings Get()
         {
-            using(var db = new LocalDbContext()) 
+            Settings settings = _db.Read();
+
+            if (settings == null)
             {
-                Settings.SetCurrent(await db.Settings.FirstOrDefaultAsync());
-                return Settings.Current;
+                _db.Write(new Settings());
             }
+
+            Settings.SetCurrent(settings);
+            return Settings.Current;
         }
-        public async Task Save(Settings settings)
+        public void Save(Settings settings)
         {
-            using(var db = new LocalDbContext())
-            {
-                if (settings.Id > 0)
-                {
-                    db.Settings.Update(settings);
-                }
-                else
-                {
-                    await db.Settings.AddAsync(settings);
-                }
+            _db.Write(settings);
 
-                Settings.SetCurrent(settings);
-
-                await db.SaveChangesAsync();
-            }
+            Settings.SetCurrent(settings);                     
         }
     }
 }

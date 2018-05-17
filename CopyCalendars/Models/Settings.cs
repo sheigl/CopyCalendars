@@ -7,8 +7,7 @@ namespace CopyCalendars.Models
 {
     public class Settings
     {
-        public int Id { get; set; }
-		public string MasterTemplateFile { get; set; }
+        public string MasterTemplateFile { get; set; }
 		public string ProofingFolder { get; set; }
 		public string WorkingCalendarFolder { get; set; }
 		public string APIKey { get; set; }

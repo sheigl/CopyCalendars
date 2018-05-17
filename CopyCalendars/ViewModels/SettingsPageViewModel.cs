@@ -78,11 +78,10 @@ namespace CopyCalendars.ViewModels
         private readonly SettingsRepository _repo = new SettingsRepository();
         public SettingsPageViewModel()
         {
-            LoadSettingsCommand = new Command(async () => {
-                var settings = await _repo.Get();
+            LoadSettingsCommand = new Command(() => {
+                var settings = _repo.Get();
                 if (settings != null)
                 {
-                    this.Settings.Id = settings.Id;
 					MasterTemplateFile = settings.MasterTemplateFile;
 					ProofingFolder = settings.ProofingFolder;
 					WorkingCalendarFolder = settings.WorkingCalendarFolder;
@@ -93,9 +92,9 @@ namespace CopyCalendars.ViewModels
                 }
 
             });
-            SaveSettingsCommand = new Command(async () => {
+            SaveSettingsCommand = new Command(() => {
                 this.Settings.LastModifiedDate = DateTime.Now;
-                await _repo.Save(this.Settings);
+                _repo.Save(this.Settings);
             });
         }
     }

@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using CopyCalendars.Models;
+using System.Text.RegularExpressions;
 
 namespace CopyCalendars.Services
 {
@@ -11,6 +12,7 @@ namespace CopyCalendars.Services
     {
         private readonly List<CalendarItem> _calendars;
         private Action<string> _logger;
+        private Regex _communityNumberRegex = new Regex(@"(\d{5})");
         public CopyCalendarService(List<CalendarItem> calendars, Action<string> logger)
         {
             _calendars = calendars;
@@ -46,8 +48,13 @@ namespace CopyCalendars.Services
 							{
 								DirectoryInfo d = new DirectoryInfo(folder);
 
-								string folderName = d.Name;
-								string communityCodeFromFolder = folderName.Substring(0, folderName.IndexOf("_"));
+                                if (!_communityNumberRegex.Match(d.Name).Success)
+                                {
+                                    continue;
+                                }
+
+                                string folderName = d.Name;
+                                string communityCodeFromFolder = _communityNumberRegex.Match(folderName).Value;
 
 								if (String.Equals(communityCodeFromFolder, calendar.CommunityCode.ToString()))
 								{
@@ -115,12 +122,12 @@ namespace CopyCalendars.Services
 					{
 						DirectoryInfo f = new DirectoryInfo(folder);
 
-                        if (f.Name.IndexOf("_") == -1)
+                        if (!_communityNumberRegex.Match(f.Name).Success)
                         {
                             continue;
                         }
 
-                        if (Int32.TryParse(f.Name.Substring(0, f.Name.IndexOf("_")), out int communityNumber))
+                        if (Int32.TryParse(_communityNumberRegex.Match(f.Name).Value, out int communityNumber))
 						{
                             CalendarItem cal = _calendars.FirstOrDefault(x => x.CommunityCode == communityNumber);
                             if (cal == null)
@@ -130,7 +137,12 @@ namespace CopyCalendars.Services
 
                             _logger(String.Format("Old Folder: {0}", folder));
                             string communityName = cal.CommunityName;
-                            string newFolderName = String.Format("{0}_{1}{2}_{3}_{4}", communityNumber < 9999 ? $"10{communityNumber}" : communityNumber.ToString(), DateTime.Now.AddMonths(1).Month < 10 ? "0" + DateTime.Now.AddMonths(1).Month.ToString() : DateTime.Now.AddMonths(1).Month.ToString(), DateTime.Now.AddMonths(1).Year.ToString().Substring(2), communityName, proofer);
+                            string newFolderName = String.Format("{0}_{1}{2}_{3}_{4}", 
+                                                                 communityNumber < 9999 ? $"10{communityNumber}" : communityNumber.ToString(), 
+                                                                 DateTime.Now.AddMonths(1).Month < 10 ? "0" + DateTime.Now.AddMonths(1).Month.ToString() : DateTime.Now.AddMonths(1).Month.ToString(), 
+                                                                 DateTime.Now.AddMonths(1).Year.ToString().Substring(2), 
+                                                                 communityName, 
+                                                                 proofer);
                             string newFolderPath = String.Format("{0}", Path.Combine(d.FullName, newFolderName));
 
                             if (f.Name == newFolderName)
